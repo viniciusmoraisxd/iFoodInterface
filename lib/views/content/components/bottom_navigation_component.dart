@@ -37,9 +37,7 @@ class BottomNavigationComponent extends StatelessWidget {
                   .toList(),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).padding.bottom,
-          )
+        
         ],
       ),
     );
@@ -82,7 +80,7 @@ class BottomNavigationItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             AppIcon(

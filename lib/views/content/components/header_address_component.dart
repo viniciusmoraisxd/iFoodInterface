@@ -9,12 +9,22 @@ class HeaderAddressComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return SliverPersistentHeader(
+      delegate: _HeaderAddressComponentDelegate(address),
+    );
+  }
+}
+
+class _HeaderAddressComponentDelegate extends SliverPersistentHeaderDelegate {
+  final String address;
+  _HeaderAddressComponentDelegate(this.address);
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       child: Column(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).padding.top,
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16,
@@ -35,5 +45,16 @@ class HeaderAddressComponent extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  double get maxExtent => 38;
+
+  @override
+  double get minExtent => 38;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }

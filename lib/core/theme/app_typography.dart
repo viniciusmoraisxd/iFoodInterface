@@ -5,6 +5,10 @@ class AppTypography {
     return Theme.of(context).textTheme.bodyText1;
   }
 
+  static TextStyle? caption(BuildContext context) {
+    return Theme.of(context).textTheme.caption;
+  }
+
   static TextStyle? bodyTextW600(BuildContext context) {
     return Theme.of(context)
         .textTheme
