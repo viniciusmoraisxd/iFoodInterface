@@ -24,10 +24,11 @@ class HeaderAddressComponent extends StatelessWidget {
               children: [
                 Text(
                   address,
-                  style: AppTypography.bodyTextBold(context),
+                  style: AppTypography.bodyTextBold(context)!
+                      .copyWith(fontSize: 13),
                 ),
-                AppIcon(AppIcons.arrowDown, AppColors.primaryColor,
-                    Size(20, 20))
+                AppIcon(
+                    AppIcons.arrowDown, AppColors.primaryColor, Size(20, 20))
               ],
             ),
           )
