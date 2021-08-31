@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ifood_interface/controllers/home_controller.dart';
 import 'package:ifood_interface/core/theme/app_colors.dart';
 import 'package:ifood_interface/core/theme/app_icons.dart';
+import 'package:ifood_interface/core/theme/app_images.dart';
 import 'package:ifood_interface/core/theme/app_typography.dart';
 import 'package:ifood_interface/models/category_model.dart';
 import 'package:ifood_interface/views/content/components/bottom_navigation_component.dart';
@@ -9,6 +10,7 @@ import 'package:ifood_interface/views/content/components/category_item_component
 import 'package:ifood_interface/views/content/components/filters_component.dart';
 import 'package:ifood_interface/views/content/components/tab_bar_component.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+import 'components/banners_component.dart';
 import 'components/header_address_component.dart';
 
 class HomePage extends StatefulWidget {
@@ -76,6 +78,19 @@ class _HomePageState extends State<HomePage>
                                   ),
                                 );
                               },
+                            ),
+                          ),
+                        ),
+                        SliverToBoxAdapter(
+                          child: SizedBox(
+                            height: 170,
+                            child: BannersComponent(
+                              list: [
+                                BannerItemComponent(imagePath: AppImages.banner1),
+                                BannerItemComponent(imagePath: AppImages.banner2),
+                                BannerItemComponent(imagePath: AppImages.banner3),
+                                BannerItemComponent(imagePath: AppImages.banner4),
+                              ],
                             ),
                           ),
                         )
