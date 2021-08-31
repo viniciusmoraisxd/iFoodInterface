@@ -20,6 +20,7 @@ class BottomNavigationComponent extends StatelessWidget {
       decoration: BoxDecoration(color: AppColors.white),
       child: Column(
         children: [
+          Container(height: 1, color: AppColors.grey200,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Row(
@@ -37,7 +38,6 @@ class BottomNavigationComponent extends StatelessWidget {
                   .toList(),
             ),
           ),
-        
         ],
       ),
     );
@@ -80,7 +80,7 @@ class BottomNavigationItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         child: Column(
           children: [
             AppIcon(

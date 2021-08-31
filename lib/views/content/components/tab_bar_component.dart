@@ -27,8 +27,9 @@ class _TabBarComponentDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(left: 16, right: 200),
+      padding: EdgeInsets.only(left: 16, right: (size.width / 2) - 16),
       child: TabBar(
         onTap: onTap,
         labelPadding: EdgeInsets.zero,

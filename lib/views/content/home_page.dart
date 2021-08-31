@@ -6,6 +6,7 @@ import 'package:ifood_interface/core/theme/app_typography.dart';
 import 'package:ifood_interface/models/category_model.dart';
 import 'package:ifood_interface/views/content/components/bottom_navigation_component.dart';
 import 'package:ifood_interface/views/content/components/category_item_component.dart';
+import 'package:ifood_interface/views/content/components/filters_component.dart';
 import 'package:ifood_interface/views/content/components/tab_bar_component.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'components/header_address_component.dart';
@@ -35,13 +36,16 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: NestedScrollView(
             physics: BouncingScrollPhysics(),
             headerSliverBuilder: (context, innerBoxScroll) {
               return [
                 HeaderAddressComponent("Rua Sergipe, 10"),
-                TabBarComponent(tabController: tabController, onTap: (index) {})
+                TabBarComponent(
+                    tabController: tabController, onTap: (index) {}),
+                FiltersComponent()
               ];
             },
             body: Column(
